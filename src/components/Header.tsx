@@ -2,6 +2,8 @@ import { useCurrentLesson } from "../store/slices/player"
 
 export function Header() {
   const { currentLesson, currentModule } = useCurrentLesson()
+
+  if (!currentLesson || !currentModule) return null
   
   return (
     <div className="flex flex-col gap-1">
